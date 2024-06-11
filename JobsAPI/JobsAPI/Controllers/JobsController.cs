@@ -1,6 +1,47 @@
-﻿namespace JobsAPI.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace JobsAPI.Controllers
 {
-    public class JobsController
+    [ApiController]
+    [Route("api/jobs")]
+    public class JobsController : ControllerBase
     {
+        // GET api/jobs
+        [HttpGet]
+        public ActionResult GetAll() 
+        {
+            return Ok();
+        }
+
+        // GET api/jobs/123
+        [HttpGet("{id}")]
+
+        public IActionResult GetById(int id)
+        {
+            //return NotFound();
+
+            return Ok();
+        }
+
+        // POST api/jobs
+        [HttpPost]
+        public IActionResult Post()
+        {
+            return Ok();
+        }
+
+        // PUT api/jobs/123
+        [HttpPut("{id}")]
+        public IActionResult Put(int id)
+        {
+            return NoContent();
+        }
+
+        // DELETE api/jobs/123
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            return NoContent();
+        }
     }
 }
