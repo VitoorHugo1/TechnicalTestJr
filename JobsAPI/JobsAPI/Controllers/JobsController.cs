@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using JobsAPI.Entities;
+using Microsoft.AspNetCore.Mvc;
 
 namespace JobsAPI.Controllers
 {
@@ -25,14 +26,14 @@ namespace JobsAPI.Controllers
 
         // POST api/jobs
         [HttpPost]
-        public IActionResult Post()
+        public IActionResult Post(Job job)
         {
-            return Ok();
+            return CreatedAtAction(nameof(GetById), new { id = job.Id}, job);
         }
 
         // PUT api/jobs/123
         [HttpPut("{id}")]
-        public IActionResult Put(int id)
+        public IActionResult Put(int id, Job job)
         {
             return NoContent();
         }

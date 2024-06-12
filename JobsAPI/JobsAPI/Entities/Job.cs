@@ -23,7 +23,7 @@
             Location = location;
             Salary = salary;
             CreatedAt = DateTime.Now;
-            18:00
+
         }
     }
 
